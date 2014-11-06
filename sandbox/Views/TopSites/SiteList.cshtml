@@ -1,0 +1,8 @@
+﻿@model List<sandbox.Models.TopSiteNameOnly>
+
+@foreach (var item in Model)
+{
+    <h3>Rank @item.ID : @item.Name</h3>
+
+    @Html.Action("Detail", "TopSites", new { id = item.ID })
+}

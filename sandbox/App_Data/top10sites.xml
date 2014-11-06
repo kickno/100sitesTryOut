@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOP>
+  <ENTRY>
+    <Rank>1</Rank>
+    <Name>Google</Name>
+    <URL>google.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>2</Rank>
+    <Name>Facebook</Name>
+    <URL>facebook.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>3</Rank>
+    <Name>YouTube</Name>
+    <URL>youtube.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>4</Rank>
+    <Name>Yahoo!</Name>
+    <URL>yahoo.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>5</Rank>
+    <Name>Baidu</Name>
+    <URL>baidu.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>6</Rank>
+    <Name>Wikipedia</Name>
+    <URL>wikipedia.org</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>7</Rank>
+    <Name>Tencent QQ</Name>
+    <URL>qq.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>8</Rank>
+    <Name>Taobao</Name>
+    <URL>taobao.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>9</Rank>
+    <Name>Twitter</Name>
+    <URL>twitter.com</URL>
+  </ENTRY>
+  <ENTRY>
+    <Rank>10</Rank>
+    <Name>Windows Live</Name>
+    <URL>live.com</URL>
+  </ENTRY>
+</TOP>

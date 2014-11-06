@@ -1,0 +1,48 @@
+﻿@model  List<sandbox.Models.TopSiteNameOnly>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Top 100 Websites Cache Control Report (excl. CDN) </h2>
+@section scripts{
+    @*<script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>*@
+    <script type="text/javascript">
+        var BlockNumber = 2;  //Infinate Scroll starts from second block
+        var NoMoreData = false;
+        var inProgress = false;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height() && !NoMoreData && !inProgress) {
+
+                inProgress = true;
+                $("#loadingDiv").show();
+
+                $.post("@Url.Action("InfinateScroll", "TopSites")", { "BlockNumber": BlockNumber },
+                        function (data) {
+
+                            BlockNumber = BlockNumber + 1;
+                            NoMoreData = data.NoMoreData;
+                            $("#siteListDiv").append(data.HTMLString);
+                            $("#loadingDiv").hide();
+                            inProgress = false;
+                        });
+            }
+        });
+    </script>
+
+}
+@*<div id="accordion">*@
+<div id="siteListDiv">
+    @{Html.RenderAction("SiteList", "TopSites", new { Model = Model });}
+</div>
+@*</div>*@
+<div id="loadingDiv" style="text-align: center; display: none; margin-bottom: 20px;">
+    <img alt="Loading" src="@Url.Content("~/Content/Images/ajax-loader.gif")" />
+</div>
+@*<p>
+    @Html.ActionLink("Next", "Index", new { page = (Int32.Parse(Model.Last().ID) + 1) })
+</p>*@
+
