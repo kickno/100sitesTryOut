@@ -2880,7 +2880,7 @@ ko.exportSymbol('__tr_ambtns', ko.templateRewriting.applyMemoizedBindingsToNextS
 
     ko.templateSources = {};
 
-    // ---- ko.templateSources.domElement -----
+    // - ko.templateSources.domElement --
 
     ko.templateSources.domElement = function(element) {
         this.domElement = element;
@@ -2911,7 +2911,7 @@ ko.exportSymbol('__tr_ambtns', ko.templateRewriting.applyMemoizedBindingsToNextS
         }
     };
 
-    // ---- ko.templateSources.anonymousTemplate -----
+    // - ko.templateSources.anonymousTemplate --
     // Anonymous templates are normally saved/retrieved as DOM nodes through "nodes".
     // For compatibility, you can also read "text"; it will be serialized from the nodes on demand.
     // Writing to "text" is still supported, but then the template data will not be available as DOM nodes.

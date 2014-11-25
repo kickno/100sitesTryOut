@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "View1";
+}
+
+<h2>HTML5 cheat sheeet</h2>
+<div>
+    <h5>&lt;Article&gt;</h5>
+    <article>Self-contained composition that isn independaently distributable</article>
+</div>
+<div>
+    <h5>&lt;Aside&gt; </h5>
+    <aside>section of page that consists of content tangentially related to content around it</aside>
+</div>
+<div>
+    <h5>&lt;audio&gt; </h5>
+    <audio controls="controls">
+        Chopin Nocturne 9-2
+        <source src="~/Content/audio/tachikoma.mp3" />
+    </audio>
+</div>
+<div>
+    <h5>&lt;bdi&gt;</h5>
+
+    <ui>
+        <li><bdi>saki</bdi></li>
+        <li><bdi>cliff</bdi></li>
+        <li><bdi>ito向子</bdi></li>
+    </ui>
+
+</div>
+
+<div>
+    <h5>&lt;canvas&gt; </h5>
+    <canvas id="mine">area that can be used to draw graphics via javascript</canvas>
+    <script>
+        var can = document.getElementById("mine");
+        var ctx = can.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 80, 80);
+    </script>
+</div>
+
+@*<div>
+        <h5>
+            &lt;command&gt;
+        </h5>
+        <command type="command" label="save" icon="~/Images/bullet.png" onclick="save()" />
+    </div>*@
+
+<div>
+    <h5>&lt;datalist&gt; </h5>
+    <input list="hoge" />
+    <datalist id="hoge">
+        <option value="apple">
+        <option value="orange">
+    </datalist>
+</div>
+
+@*<div>
+        <h5>&lt;datatemplate&gt; </h5>
+        <datatemplate>this is datatemplate</datatemplate>
+    </div>*@
+
+<div>
+    <h5>
+        &lt;details&gt;
+    </h5>
+    <details>
+        <summary>header of detail lement</summary>
+        example of details
+    </details>
+</div>
+
+
+<div>
+    <h5>&lt;embed&gt; </h5>
+    <embed>flash animation of enbed</embed>
+</div>
+
+
+<div>
+    <h5>&lt;figure&gt; group of media content</h5>
+    <figure>
+        <img src="~/Images/1s.JPG" />
+        <figcaption>example of figure and figure caption</figcaption>
+    </figure>
+</div>
+
+
+<div>
+    <h5>&lt;footer&gt;</h5>
+    <footer>footer example</footer>
+</div>
+
+
+<div>
+    <h5>&lt;header&gt;</h5>
+    <header>header content</header>
+</div>
+
+
+<div>
+    <h5>&lt;hgroup&gt; </h5>
+    <hgroup>
+        <h1>group of headings for section</h1>
+        <h2>h2</h2>
+    </hgroup>
+</div>
+
+
+<div>
+    <h5>&lt;keygen&gt; </h5>
+    <keygen name="security">
+    When the form is submitted, the private key is stored locally, and the public key is sent to the server
+</div>
+
+
+<div>
+    <h5>&lt;mark&gt; </h5>
+    <mark>marked tesxt</mark>
+</div>
+
+
+<div>
+    <h5>&lt;meter&gt; </h5>
+    <meter value="2" min="0" max="10">2 out of 10</meter>
+    <meter value="0.6">60%</meter>
+</div>
+
+
+<div>
+    <h5>&lt;nav&gt; </h5>
+    <nav>
+        <a href="riot.jp">riot.jp</a>
+        <a href="kickno.riot.jp">kickno</a>
+    </nav>
+</div>
+
+
+<div>
+    <h5>&lt;output&gt; </h5>
+    perform calculation and show the result
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100 + <input type="number" id="b" value="50" />= 
+        <output name="x" for="a b" />
+    </form>
+</div>
+
+
+<div>
+    <h5>&lt;progress&gt; </h5>
+    <progress value="22" max="100" />
+</div>
+
+
+<div>
+    <h5>&lt;rp &gt; </h5>
+    <rp>parenthesized ruby text</rp>
+</div>
+
+
+<div>
+    <h5>&lt;rt&gt; </h5>
+    <rt>ruby text</rt>
+</div>
+
+
+<div>
+    <h5>&lt;section&gt; </h5>
+    <section>section in a document</section>
+</div>
+
+<div>
+    <h5>&lt;summary&gt; </h5>
+    <summary>header of detail lement</summary>
+    <p>summary tag is visible heading for the details element.</p>
+</div>
+<div>
+    <h5>&lt;time&gt; </h5>
+    <time datetime="2014-10-13 20:00">date time</time>
+</div>
+<div>
+    <h5>&lt;video&gt; </h5>
+        <video controls="controls">
+            <source src="~/Content/audio/Les%20Sylphides.mov" type="video/quicktime" />
+        </video>
+</div>
+<div>
+    <h5>&lt;wbr&gt; </h5>
+    <p>
+        osdoiufsoaidusoidfu,osidfusoidfua
+        <wbr>possible line break</wbr>
+    </p>
+</div>

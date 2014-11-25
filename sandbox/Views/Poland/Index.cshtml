@@ -1,0 +1,132 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Video.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link href="~/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
+    <title>Poland</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+
+        $(function () {
+
+            $.each($('.dropDiv'), function (i, el) {
+                var dh = $(el).outerHeight();
+                var dw = $(el).outerWidth();
+
+                var mythis = $('#holder a');
+                var offset = mythis.offset();
+                var w = mythis.outerWidth() + 30 * i;
+
+                var initLeft = offset.left + ((w / 2) - (dw / 2));
+                var j = i
+                if (i > 3) {
+                    j = j - 4;
+                    dh = dh - (dh * 1.15);
+                }
+
+                setTimeout(function () {
+                    $(el).css({
+                        left: initLeft + (j * dw),
+                        top: $(window).scrollTop() - dh,
+                        display: 'table'
+
+                    }).animate({
+                        left: initLeft + (j * dw),
+                        top: offset.top - dh,
+                    }, 1000, 'easeOutBounce');
+                }, 1000 + (i * 1000));
+
+            });
+
+            $("#audioplayer").prop("volume", 0.3);
+
+            $('#audioSlider').slider(
+                {
+                    orientation: "vertical",
+                    value: audioplayer.volume,
+                    min: 0,
+                    max: 1,
+                    range: 'min',
+                    animate: true,
+                    step: .1,
+                    slide: function (e, ui) {
+                        audioplayer.volume = ui.value;
+                    }
+                }
+            );
+        });
+
+    </script>
+</head>
+<body>
+    <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
+    <audio id="audioplayer" autoplay>
+        <source src="~/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="title">"Another West" -- Solo trip to Poland, for the 1st time in Summer 2014</div>
+    <div id="carpet">
+        <div class="dropDiv" style="background: rgba(33,66,00,1)"><span class="date"><a href="#po1" id="po_pop">Aug 31</a></span></div>
+        <div class="dropDiv" style="background: rgba(66,99,00,0.95)"><span class="date"><a href="#po2" id="po_pop">Sept 1</a></span></div>
+        <div class="dropDiv" style="background: rgba(99,99,66,0.95)"><span class="date"><a href="#po3" id="po_pop">Sept 2</a></span></div>
+        <div class="dropDiv" style="background: rgba(255,204,33,0.95)"><span class="date"><a href="#po4" id="po_pop">Sept 3</a></span></div>
+        <div class="dropDiv" style="background: rgba(99,66,33,0.95)"><span class="date"><a href="#po5" id="po_pop">Sept 4</a></span></div>
+        <div class="dropDiv" style="background: rgba(99,66,66,0.95)"><span class="date"><a href="#po6" id="po_pop">Sept 5</a></span></div>
+        <div class="dropDiv" style="background: rgba(204,66,66,0.95)"><span class="date"><a href="#po7" id="po_pop">Sept 6</a></span></div>
+        <div id="holder"><a href="javascript:void(0);" id="main"></a></div>
+
+        <div id="footer">Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Piano learner: Kickno the webmaster</div>
+    </div>
+    <video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
+        <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
+    </video>
+    <!--1st day-->
+    <a href="#x" class="overlay" id="po1"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/1.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--2nd day-->
+    <a href="#x" class="overlay" id="po2"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/2.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--3rd day-->
+    <a href="#x" class="overlay" id="po3"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/3.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--4th day-->
+    <a href="#x" class="overlay" id="po4"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/4.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--5th day-->
+    <a href="#x" class="overlay" id="po5"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/5.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--6th day-->
+    <a href="#x" class="overlay" id="po6"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/6.html")))
+    </div>
+    <a class="close" href="#close"></a>
+    <!--7th day-->
+    <a href="#x" class="overlay" id="po7"></a>
+    <div class="popup">
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/7.html")))
+    </div>
+    <a class="close" href="#close"></a>
+</body>
+</html>
