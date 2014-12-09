@@ -4,16 +4,21 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/Review">
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
     <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
     <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
     <link href="/Content/Poland.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/ico" href="/Content/Poland/favicon.ico">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
     <link href="/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
-    <title>Another West -- Poland from Japanese eyes, living in U.S.</title>
+    <link rel="image_src" href="http://riot.jp/Content/images/poland/marmaid.jpg" />
+    <meta itemprop="name" content="Another West -- Poland for Japanese, living in U.S">
+    <meta itemprop="description" content="Solo trip to Poland, for the 1st time in Summer 2014">
+    <meta itemprop="image" content="http://riot.jp/Content/images/poland/marmaid.jpg">
+    <title>Another West -- Poland for Japanese, living in U.S.</title>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
@@ -21,38 +26,35 @@
 
         $(function () {
 
+            var adjustOrientation = 3;
+            var nothorizenal = false;
+            if (window.innerHeight > window.innerWidth) {
+                nothorizenal = true;
+                adjustOrientation = adjustOrientation - 1; // user is horizental
+            }
+            var mythis = $('#holder a');
+            var offset = mythis.offset();
+
             $.each($('.dropDiv'), function (i, el) {
                 var dh = $(el).outerHeight();
                 var dw = $(el).outerWidth();
-
-                var mythis = $('#holder a');
-                var offset = mythis.offset();
                 var w = mythis.outerWidth() + 30 * i;
-                var adjustOrientation = 3;
-                var nothorizenal = false;
-                if (window.innerHeight > window.innerWidth) {
-                    nothorizenal = true;
-                    adjustOrientation = adjustOrientation - 1; // user is horizental
-                }
+
                 var initLeft = offset.left + ((w / 2) - (dw / 2));
                 var j = i
                 if (i > adjustOrientation) {
-                    if (nothorizenal)
-                    { //to do; make it logical
-                        if (i > 5)
-                        {
+                    if (nothorizenal) { //to do; make it logical
+                        if (i > 5) {
                             j = j - 6;
                             dh = dh - (dh * 2.3);
                         }
-                        else
-                        {
+                        else {
                             j = j - (adjustOrientation + 1);
                             dh = dh - (dh * 1.15);
                         }
 
                     }
-                    else
-                    {
+                    else {
                         j = j - (adjustOrientation + 1);
                         dh = dh - (dh * 1.15);
                     }
@@ -68,8 +70,8 @@
                     }).animate({
                         left: initLeft + (j * dw),
                         top: offset.top - dh,
-                    }, 1000, 'easeOutBounce');
-                }, 1000 + (i * 1000));
+                    }, 2000, 'easeOutBounce');
+                }, 2000 + (i * 1500));
 
             });
 
@@ -94,7 +96,7 @@
                 var settings = $.extend({
                     slideSpeed: 8,
                     revertSpeed: 3,
-                    labelWidth: 0
+                    labelWidth: 30
                 }, options);
 
                 this.each(function () {
@@ -137,7 +139,6 @@
                     // Adding classes and hiding input elements
                     container.addClass('ui-sbutton-container ui-corner-all');
                     input.addClass('ui-helper-hidden-accessible');
-
                     label.addClass('ui-sbutton-label');
 
                     // Setting label widths - if none set,
@@ -195,7 +196,7 @@
                 return this;
             };
             $('.slideButton').slideButton();
-            ///http://jsfiddle.net/RDkBL/7/
+            /////http://jsfiddle.net/RDkBL/7/
 
             $('a[id^="dateClick"]').click(function () {
                 var num = $(this).attr("id");
@@ -224,7 +225,7 @@
             <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="~/Content/images/us_16.png" /></label>
         </div>
         <audio id="audioplayer" autoplay>
-            <source src="~/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
+            <source src="/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
         </audio>
     </div>
 
@@ -244,7 +245,7 @@
             Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
             Kickno the webmaster
             <br />
-            <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+            <a href="https://plus.google.com/share?url=http://riot.jp/poland" onclick="javascript:window.open(this.href,
                 '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                 <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
             </a>
@@ -253,12 +254,12 @@
             &nbsp; This webpage template is free to use. Will be available at Github soon.
         </div>
     </div>
-    <video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
-        <source src="~/Content/audio/background_chopin.webm" type="video/webm" />
-        <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
-        <source src="~/Content/audio/background_chopin.ogv" type="video/ogg" />
-        <source src="~/Content/audio/background_chopin.3gp" type="video/3gp" />
-    </video>
+    @*<video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
+            <source src="~/Content/audio/background_chopin.webm" type="video/webm" />
+            <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
+            <source src="~/Content/audio/background_chopin.ogv" type="video/ogg" />
+            <source src="~/Content/audio/background_chopin.3gp" type="video/3gp" />
+        </video>*@
 
     @foreach (var item in Model)
     {

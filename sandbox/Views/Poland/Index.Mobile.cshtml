@@ -4,26 +4,33 @@
     Layout = null;
 }
 @*@{
-    if (Request.Browser.IsMobileDevice)
-    {
-        Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
-    }
-    else
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+        if (Request.Browser.IsMobileDevice)
+        {
+            Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout.cshtml";
+        }
 }*@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/Review">
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
     <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
     <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
     <link href="/Content/Poland_Mobile.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/ico" href="/Content/Poland/favicon.ico">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
     <link href="/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
-    <title>Another West -- Poland from Japanese eyes, living in U.S.</title>
+
+    <link rel="image_src" href="http://riot.jp/Content/images/poland/marmaid.jpg" />
+    <meta itemprop="name" content="Another West -- Poland for Japanese, living in U.S">
+    <meta itemprop="description" content="Solo trip to Poland, for the 1st time in Summer 2014">
+    <meta itemprop="image" content="http://riot.jp/Content/images/poland/marmaid.jpg">
+    <title>Another West -- Poland for Japanese, living in U.S.</title>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
@@ -66,22 +73,21 @@
                 </span>
             </div>
         }
-     <hr style="display: none"/>
-            <div id="footer">
-                Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place;
-                <br />
-                Piano learner:
+        <p id="footer">
+            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place;
+            <br />
+            Piano learner:
             Kickno the webmaster
             <br />
-                <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+            <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
         '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
-                </a>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
-                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                &nbsp; This webpage template is free to use. Will be available at Github soon.
-            </div>
-     
+                <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+            </a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+            &nbsp; This webpage template is free to use. Will be available at Github soon.
+        </p>
+
     </div>
     @foreach (var item in Model)
     {

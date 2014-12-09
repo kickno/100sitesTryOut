@@ -189,7 +189,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CodingController.cs" />
-    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PolandController.cs" />
     <Compile Include="Controllers\TopSitesController.cs" />
@@ -214,7 +213,10 @@
     <Content Include="Content\audio\background_chopin.3gp" />
     <Content Include="Content\audio\background_chopin.mp4" />
     <Content Include="Content\audio\tachikoma.mp3" />
+    <Content Include="Content\images\poland\1\nie.jpg" />
     <Content Include="Content\images\poland\1\tramTicket.jpg" />
+    <Content Include="Content\images\poland\2\bach.jpg" />
+    <Content Include="Content\images\poland\5\familyTrain.jpg" />
     <Content Include="Content\images\poland\6\Capture.jpg" />
     <Content Include="Content\images\poland\6\Capture2.jpg" />
     <Content Include="Content\images\poland\6\WP_20140905_004.jpg" />
@@ -239,8 +241,10 @@
     <Content Include="Content\images\poland\7\sasukiStatue.jpg" />
     <Content Include="Content\images\poland\7\sasukiStatuvar.jpg" />
     <Content Include="Content\images\poland\7\waslariver.jpg" />
+    <Content Include="Content\images\poland\marmaid.jpg" />
     <Content Include="Content\Poland\6j.html" />
     <Content Include="Content\Poland\7j.html" />
+    <Content Include="Content\Poland\favicon.ico" />
     <Content Include="Content\Poland_Mobile.css" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\chopin.jpg" />
