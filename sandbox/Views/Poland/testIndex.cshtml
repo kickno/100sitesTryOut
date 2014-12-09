@@ -1,0 +1,29 @@
+﻿@model IEnumerable<sandbox.Models.Poland>
+
+<h2>Poland</h2>
+
+
+<div>
+    @foreach (var item in Model)
+    {
+
+        <div class="dropDiv" style="background: @item.Color">
+            <span class="date">
+                @Html.ActionLink(@item.Date, "", "Poland", null, null, "po" + @item.ID, null, null);
+            </span>
+        </div>
+    }
+
+</div>
+<div>
+    @foreach (var item in Model)
+    {
+        <a href="#x" class="overlay" id="po@(item.ID)"></a>
+        <div class="popup">
+            <div class="popupInner">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + ".html")))
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+    }
+</div>

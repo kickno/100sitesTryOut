@@ -20,19 +20,6 @@ namespace sandbox.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Kickno";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Kickno";
-
-            return View();
-        }
         //private void GetPage(String url)
         //{
         //    try

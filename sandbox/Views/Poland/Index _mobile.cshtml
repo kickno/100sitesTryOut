@@ -1,0 +1,90 @@
+﻿@model IEnumerable<sandbox.Models.Poland>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
+    <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    <link href="/Content/Video.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link href="/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
+    <title>Another West -- Poland from Japanese eyes, living in U.S.</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+
+        $(function () {
+
+            $('a[id^="dateClick"]').click(function () {
+                var num = $(this).attr("id");
+                var lastChar = num[num.length - 1];
+                var checked = $('#lang-on').prop("checked");
+                if (checked) {
+                    $(this).attr("href", "#po" + lastChar + "j");
+                }
+                else {
+                    $(this).attr("href", "#po" + lastChar);
+                }
+
+            });
+        });
+    </script>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+
+</head>
+<body>
+    <div id="header">       
+        <div class="slideButton">
+            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="~/Content/images/jp_16.png" /></label>
+            <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="~/Content/images/us_16.png" /></label>
+        </div>
+    </div>
+
+    <div id="title">"Another West": Solo trip to Poland, for the 1st time in Summer 2014</div>
+    <div id="carpet">
+        @foreach (var item in Model)
+        {
+            <div class="dropDiv" style="background: @item.Color">
+                <span class="date">
+                    <a href="" id="dateClick@(item.ID)">@item.Date</a>
+                </span>
+            </div>
+        }
+        <div id="footer">
+            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
+            Kickno the webmaster
+            <br />
+            <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+                '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+            </a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+            &nbsp; This webpage template is free to use. Will be available at Github soon.
+        </div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <a href="#x" class="overlay" id="po@(item.ID)"></a>
+        <div class="popup">
+            <div class="popupInner">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + ".html")))
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+        <a href="#x" class="overlay" id="po@(item.ID)j"></a>
+        <div class="popup">
+            <div class="popupInner">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + "j.html")))
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+    }
+</body>
+</html>

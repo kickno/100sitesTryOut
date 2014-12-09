@@ -128,7 +128,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 12:23:22</publishTime>
     </File>
     <File Include="bin/sandbox.dll">
-      <publishTime>11/06/2014 10:11:12</publishTime>
+      <publishTime>12/09/2014 13:28:32</publishTime>
     </File>
     <File Include="bin/System.Spatial.dll">
       <publishTime>10/22/2014 12:23:22</publishTime>
@@ -184,14 +184,470 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/zh-Hant/System.Spatial.resources.dll">
       <publishTime>10/22/2014 12:23:22</publishTime>
     </File>
+    <File Include="Content/audio/20130512_67-4&amp;33-2_2.mp3">
+      <publishTime>11/21/2014 00:38:12</publishTime>
+    </File>
+    <File Include="Content/audio/background_chopin.3gp">
+      <publishTime>11/25/2014 21:21:40</publishTime>
+    </File>
+    <File Include="Content/audio/background_chopin.mp4">
+      <publishTime>11/20/2014 16:38:24</publishTime>
+    </File>
+    <File Include="Content/audio/background_chopin.ogv">
+      <publishTime>11/25/2014 21:21:40</publishTime>
+    </File>
+    <File Include="Content/audio/background_chopin.webm">
+      <publishTime>11/25/2014 21:21:40</publishTime>
+    </File>
+    <File Include="Content/audio/Les Sylphides.mov">
+      <publishTime>11/09/2014 22:54:59</publishTime>
+    </File>
+    <File Include="Content/audio/tachikoma.mp3">
+      <publishTime>09/21/2013 11:43:00</publishTime>
+    </File>
     <File Include="Content/images/ajax-loader.gif">
-      <publishTime>11/04/2014 15:52:31</publishTime>
+      <publishTime>11/04/2014 15:52:32</publishTime>
+    </File>
+    <File Include="Content/images/chopin.jpg">
+      <publishTime>11/20/2014 16:38:32</publishTime>
+    </File>
+    <File Include="Content/images/jp_16.png">
+      <publishTime>11/29/2014 12:46:36</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/bathroom.jpg">
+      <publishTime>11/28/2014 13:29:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/outletcrisis.jpg">
+      <publishTime>11/28/2014 13:29:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/play.jpg">
+      <publishTime>11/28/2014 13:29:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/tramTicket.jpg">
+      <publishTime>12/08/2014 22:49:42</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/viennaAirport.jpg">
+      <publishTime>11/28/2014 13:29:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/wasenki_chopin.jpg">
+      <publishTime>11/28/2014 13:29:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/1/wehase.jpg">
+      <publishTime>11/28/2014 13:32:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/9-1-q copy.jpg">
+      <publishTime>12/01/2014 22:31:02</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/9-1.jpg">
+      <publishTime>12/01/2014 22:01:20</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/benchmap.jpg">
+      <publishTime>12/01/2014 22:01:20</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/bird.jpg">
+      <publishTime>12/01/2014 22:00:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/church.jpg">
+      <publishTime>12/01/2014 22:00:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/honoratoka.jpg">
+      <publishTime>12/01/2014 22:00:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/honoratoka2.jpg">
+      <publishTime>12/01/2014 22:47:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/oldtown1.jpg">
+      <publishTime>12/01/2014 22:00:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/oldtown2.jpg">
+      <publishTime>12/01/2014 22:03:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/2/tomb.jpg">
+      <publishTime>12/01/2014 22:00:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/Capture.JPG">
+      <publishTime>12/02/2014 21:14:28</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/chopinM.jpg">
+      <publishTime>12/02/2014 23:10:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/chopinM2.jpg">
+      <publishTime>12/02/2014 21:33:44</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/goblin.jpg">
+      <publishTime>12/02/2014 23:10:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/lagenki.JPG">
+      <publishTime>12/02/2014 21:14:28</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/Lagenki1.jpg">
+      <publishTime>12/02/2014 21:34:24</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/Lagenki2.jpg">
+      <publishTime>12/02/2014 21:39:32</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/morningRun.jpg">
+      <publishTime>12/02/2014 21:14:28</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/oldtown.jpg">
+      <publishTime>12/02/2014 21:35:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/peacock.jpg">
+      <publishTime>12/02/2014 21:39:46</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/score.jpg">
+      <publishTime>12/02/2014 21:37:00</publishTime>
+    </File>
+    <File Include="Content/images/poland/3/sushi.jpg">
+      <publishTime>12/02/2014 21:40:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/birthPlace.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/busStop.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/chopin.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/instrument.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/piano.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/regional1.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/regional2.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/trainDoor.jpg">
+      <publishTime>12/03/2014 22:34:30</publishTime>
+    </File>
+    <File Include="Content/images/poland/4/WP_20140904_006Setumei.jpg">
+      <publishTime>12/04/2014 09:10:50</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/rakugaki.jpg">
+      <publishTime>12/06/2014 19:35:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/tapestorie.jpg">
+      <publishTime>12/04/2014 18:50:44</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_002.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_004.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_005.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_032.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_061.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/5/WP_20140904_077.jpg">
+      <publishTime>12/04/2014 18:49:26</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/Capture.jpg">
+      <publishTime>12/08/2014 22:40:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/Capture2.jpg">
+      <publishTime>12/08/2014 22:40:14</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_004.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_005.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_008.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_009.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_012.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_018.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_046.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20140905_061.jpg">
+      <publishTime>12/08/2014 22:39:01</publishTime>
+    </File>
+    <File Include="Content/images/poland/6/WP_20141128_001 %281%29.jpg">
+      <publishTime>12/08/2014 22:49:00</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/chopinstatue.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/last.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/market.jpg">
+      <publishTime>12/09/2014 11:11:24</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/morningstatue.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/royalPalacePiano.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/royalPalacepic.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/royalPalacePicRight.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/royalPaleceroom.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/RoyalParacepicleft.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/running.jpg">
+      <publishTime>12/09/2014 11:07:05</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/sasukiStatue.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/sasukiStatuvar.jpg">
+      <publishTime>12/09/2014 11:12:18</publishTime>
+    </File>
+    <File Include="Content/images/poland/7/waslariver.jpg">
+      <publishTime>12/09/2014 11:16:36</publishTime>
+    </File>
+    <File Include="Content/images/tw.gif">
+      <publishTime>11/28/2014 10:09:52</publishTime>
+    </File>
+    <File Include="Content/images/us_16.png">
+      <publishTime>11/29/2014 12:37:28</publishTime>
+    </File>
+    <File Include="Content/images/volume.jpg">
+      <publishTime>11/21/2014 12:07:36</publishTime>
     </File>
     <File Include="Content/PagedList.css">
       <publishTime>11/03/2014 16:55:56</publishTime>
     </File>
+    <File Include="Content/Poland.css">
+      <publishTime>12/09/2014 12:28:03</publishTime>
+    </File>
+    <File Include="Content/Poland/1.html">
+      <publishTime>12/08/2014 22:51:41</publishTime>
+    </File>
+    <File Include="Content/Poland/1j.html">
+      <publishTime>12/08/2014 22:52:01</publishTime>
+    </File>
+    <File Include="Content/Poland/2.html">
+      <publishTime>12/02/2014 08:44:18</publishTime>
+    </File>
+    <File Include="Content/Poland/2j.html">
+      <publishTime>12/02/2014 20:52:12</publishTime>
+    </File>
+    <File Include="Content/Poland/3.html">
+      <publishTime>12/09/2014 13:15:22</publishTime>
+    </File>
+    <File Include="Content/Poland/3j.html">
+      <publishTime>12/09/2014 13:14:43</publishTime>
+    </File>
+    <File Include="Content/Poland/4.html">
+      <publishTime>12/09/2014 13:02:50</publishTime>
+    </File>
+    <File Include="Content/Poland/4j.html">
+      <publishTime>12/09/2014 13:03:47</publishTime>
+    </File>
+    <File Include="Content/Poland/5.html">
+      <publishTime>12/07/2014 15:59:38</publishTime>
+    </File>
+    <File Include="Content/Poland/5j.html">
+      <publishTime>12/07/2014 16:04:16</publishTime>
+    </File>
+    <File Include="Content/Poland/6.html">
+      <publishTime>12/09/2014 11:12:27</publishTime>
+    </File>
+    <File Include="Content/Poland/6j.html">
+      <publishTime>12/09/2014 10:34:28</publishTime>
+    </File>
+    <File Include="Content/Poland/7.html">
+      <publishTime>12/09/2014 13:23:51</publishTime>
+    </File>
+    <File Include="Content/Poland/7j.html">
+      <publishTime>12/09/2014 13:27:04</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery-ui.css">
+      <publishTime>11/09/2014 15:10:52</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.accordion.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.all.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.base.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.button.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.core.css">
+      <publishTime>11/09/2014 15:10:52</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.datepicker.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.dialog.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.progressbar.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.resizable.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.selectable.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.slider.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.tabs.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/jquery.ui.theme.css">
+      <publishTime>11/09/2014 15:10:52</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery-ui.min.css">
+      <publishTime>10/22/2014 12:23:00</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>10/22/2014 12:23:02</publishTime>
+    </File>
+    <File Include="Content/Poland_Mobile.css">
+      <publishTime>12/08/2014 18:07:16</publishTime>
+    </File>
     <File Include="Content/Site.css">
-      <publishTime>10/22/2014 12:22:44</publishTime>
+      <publishTime>12/01/2014 22:52:06</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>10/22/2014 12:23:02</publishTime>
@@ -233,7 +689,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 12:23:02</publishTime>
     </File>
     <File Include="Content/themes/base/jquery-ui.css">
-      <publishTime>11/04/2014 21:52:09</publishTime>
+      <publishTime>11/09/2014 15:10:52</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.accordion.css">
       <publishTime>10/22/2014 12:23:02</publishTime>
@@ -251,7 +707,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 12:23:02</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.core.css">
-      <publishTime>10/22/2014 12:23:02</publishTime>
+      <publishTime>11/09/2014 15:10:52</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.datepicker.css">
       <publishTime>10/22/2014 12:23:02</publishTime>
@@ -275,7 +731,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 12:23:02</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.theme.css">
-      <publishTime>10/22/2014 12:23:02</publishTime>
+      <publishTime>11/09/2014 15:10:52</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>10/22/2014 12:23:02</publishTime>
@@ -355,11 +811,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
       <publishTime>10/22/2014 12:23:02</publishTime>
     </File>
+    <File Include="Content/Video.css">
+      <publishTime>12/01/2014 23:22:17</publishTime>
+    </File>
     <File Include="favicon.ico">
       <publishTime>10/22/2014 12:22:44</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>10/22/2014 12:22:44</publishTime>
+    </File>
+    <File Include="Images/1s.JPG">
+      <publishTime>11/09/2014 22:38:48</publishTime>
     </File>
     <File Include="Images/accent.png">
       <publishTime>10/22/2014 12:22:44</publishTime>
@@ -437,31 +899,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 12:23:04</publishTime>
     </File>
     <File Include="Scripts/knockout-2.2.0.debug.js">
-      <publishTime>10/22/2014 12:23:14</publishTime>
+      <publishTime>11/09/2014 15:10:54</publishTime>
     </File>
     <File Include="Scripts/knockout-2.2.0.js">
       <publishTime>10/22/2014 12:23:14</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>11/04/2014 21:44:52</publishTime>
+      <publishTime>11/09/2014 15:10:54</publishTime>
     </File>
     <File Include="Scripts/_references.js">
       <publishTime>10/22/2014 12:23:04</publishTime>
     </File>
+    <File Include="Views/Coding/Index.cshtml">
+      <publishTime>11/09/2014 23:00:24</publishTime>
+    </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>10/27/2014 23:13:40</publishTime>
+    </File>
+    <File Include="Views/Poland/Index _mobile.cshtml">
+      <publishTime>12/01/2014 21:05:59</publishTime>
+    </File>
+    <File Include="Views/Poland/Index.cshtml">
+      <publishTime>12/08/2014 15:27:36</publishTime>
+    </File>
+    <File Include="Views/Poland/Index_mobile.cshtml">
+      <publishTime>12/08/2014 17:49:50</publishTime>
+    </File>
+    <File Include="Views/Poland/testIndex.cshtml">
+      <publishTime>11/30/2014 12:41:41</publishTime>
+    </File>
+    <File Include="Views/Poland/_InnerPoland.cshtml">
+      <publishTime>11/30/2014 06:57:08</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>10/22/2014 12:22:44</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/03/2014 11:54:06</publishTime>
+      <publishTime>11/20/2014 16:59:42</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/27/2014 23:13:38</publishTime>
     </File>
     <File Include="Views/Shared/_Tops.cshtml">
-      <publishTime>11/06/2014 10:08:09</publishTime>
+      <publishTime>11/06/2014 16:42:50</publishTime>
     </File>
     <File Include="Views/Shared/_TopSite.cshtml">
       <publishTime>11/03/2014 10:52:04</publishTime>
@@ -473,10 +953,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 17:36:20</publishTime>
     </File>
     <File Include="Views/TopSites/Index.cshtml">
-      <publishTime>11/06/2014 10:08:26</publishTime>
+      <publishTime>11/06/2014 10:08:28</publishTime>
     </File>
     <File Include="Views/TopSites/SiteList.cshtml">
-      <publishTime>11/04/2014 17:07:41</publishTime>
+      <publishTime>11/04/2014 17:07:42</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/22/2014 12:22:44</publishTime>
@@ -485,7 +965,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/22/2014 17:37:18</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/03/2014 23:37:39</publishTime>
+      <publishTime>11/28/2014 11:53:16</publishTime>
     </File>
   </ItemGroup>
 </Project>

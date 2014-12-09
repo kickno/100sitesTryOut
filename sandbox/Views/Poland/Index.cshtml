@@ -1,14 +1,19 @@
-﻿@{
+﻿@model IEnumerable<sandbox.Models.Poland>
+
+@{
     Layout = null;
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/Video.css" rel="stylesheet" />
+    <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
+    <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    <link href="/Content/Poland.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-    <link href="~/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
-    <title>Poland</title>
+    <link href="/Content/themes/base/jquery.ui.slider.css" rel="stylesheet" />
+    <title>Another West -- Poland from Japanese eyes, living in U.S.</title>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
@@ -23,14 +28,37 @@
                 var mythis = $('#holder a');
                 var offset = mythis.offset();
                 var w = mythis.outerWidth() + 30 * i;
-
+                var adjustOrientation = 3;
+                var nothorizenal = false;
+                if (window.innerHeight > window.innerWidth) {
+                    nothorizenal = true;
+                    adjustOrientation = adjustOrientation - 1; // user is horizental
+                }
                 var initLeft = offset.left + ((w / 2) - (dw / 2));
                 var j = i
-                if (i > 3) {
-                    j = j - 4;
-                    dh = dh - (dh * 1.15);
-                }
+                if (i > adjustOrientation) {
+                    if (nothorizenal)
+                    { //to do; make it logical
+                        if (i > 5)
+                        {
+                            j = j - 6;
+                            dh = dh - (dh * 2.3);
+                        }
+                        else
+                        {
+                            j = j - (adjustOrientation + 1);
+                            dh = dh - (dh * 1.15);
+                        }
 
+                    }
+                    else
+                    {
+                        j = j - (adjustOrientation + 1);
+                        dh = dh - (dh * 1.15);
+                    }
+
+
+                }
                 setTimeout(function () {
                     $(el).css({
                         left: initLeft + (j * dw),
@@ -49,7 +77,7 @@
 
             $('#audioSlider').slider(
                 {
-                    orientation: "vertical",
+                    orientation: "horizental",
                     value: audioplayer.volume,
                     min: 0,
                     max: 1,
@@ -60,73 +88,194 @@
                         audioplayer.volume = ui.value;
                     }
                 }
-            );
-        });
+            ); //audio slider end
+            $.fn.slideButton = function (options) {
+                // Settings
+                var settings = $.extend({
+                    slideSpeed: 8,
+                    revertSpeed: 3,
+                    labelWidth: 0
+                }, options);
 
+                this.each(function () {
+                    var container = $(this);
+                    var label = container.children('label');
+                    var input = container.children(':radio');
+                    var maxWidth = 0;
+
+                    if (label.length != 2 || input.length != 2) {
+                        throw new Error("The container must contain two radio buttons and two labels");
+                    }
+
+                    // move() does the animation associated with
+                    // state changing for the button
+                    function move(direction, speed) {
+                        var amount = direction === 'right' ? halfWidth : -1;
+                        var duration = (direction === 'right' ? halfWidth - handle.position().left : handle.position().left) * speed;
+
+                        handle.animate({
+                            left: amount
+                        }, duration);
+
+                        input.eq(direction === 'right' ? 0 : 1).attr('checked', true);
+                    }
+
+                    // Handles changing by checking current state
+                    function updateState() {
+                        move(handle.hasClass('jp') ? 'right' : 'left', settings.slideSpeed);
+                        handle.toggleClass('jp');
+                        return false;
+                    }
+
+                    // Reverts position - think of this as
+                    // the opposite of updateState()
+                    function revert() {
+                        move(handle.hasClass('jp') ? 'left' : 'right', settings.revertSpeed);
+                        return false;
+                    }
+
+                    // Adding classes and hiding input elements
+                    container.addClass('ui-sbutton-container ui-corner-all');
+                    input.addClass('ui-helper-hidden-accessible');
+
+                    label.addClass('ui-sbutton-label');
+
+                    // Setting label widths - if none set,
+                    // then loop through all of them and use the biggest
+                    if (settings.labelWidth) {
+                        maxWidth = settings.labelWidth;
+                    } else {
+                        label.each(function () {
+                            var w = $(this).outerWidth();
+                            if (w > maxWidth) {
+                                maxWidth = w;
+                            }
+                        });
+                    }
+
+                    // Padding was useful for finding largest width,
+                    // but will now interfere when setting explicit widths
+                    label.width(maxWidth).css({
+                        'padding-left': 0,
+                        'padding-right': 0
+                    });
+
+                    // Getting all important half width for later use
+                    var halfWidth = (container.outerWidth() / 2);
+
+                    // Very messy chain that does element creation,
+                    // insertion and event handling all at once
+                    var handle = $('<a />')
+                    .addClass('ui-sbutton-handle  ui-corner-all').hover(function () {
+                        $(this).toggleClass('ui-sbutton-active');
+                    }).dblclick(function () {
+                        updateState();
+                        return false;
+                    }).appendTo(container).width(maxWidth - 1).draggable({
+                        containment: 'parent',
+                        axis: 'x',
+                        stop: function (event, ui) {
+                            var left = $(this).position().left;
+                            if ((left > (halfWidth - 1) / 2 && handle.hasClass('jp')) || (left < (halfWidth / 2 - 1) && !handle.hasClass('jp'))) {
+                                updateState();
+                            } else {
+                                revert();
+                            }
+                        }
+                    });
+
+                    // Set up initial state of the button
+                    if (input.first().is(':checked')) {
+                        move('right', 0);
+                    } else {
+                        handle.addClass('jp');
+                    }
+                });
+
+                return this;
+            };
+            $('.slideButton').slideButton();
+            ///http://jsfiddle.net/RDkBL/7/
+
+            $('a[id^="dateClick"]').click(function () {
+                var num = $(this).attr("id");
+                var lastChar = num[num.length - 1];
+                var checked = $('#lang-on').prop("checked");
+                if (checked) {
+                    $(this).attr("href", "#po" + lastChar + "j");
+                }
+                else {
+                    $(this).attr("href", "#po" + lastChar);
+                }
+
+            });
+        });
     </script>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+
 </head>
 <body>
-    <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
-    <audio id="audioplayer" autoplay>
-        <source src="~/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
-    </audio>
-    <div id="title">"Another West" -- Solo trip to Poland, for the 1st time in Summer 2014</div>
+    <div id="header">
+        <div class="volume">
+            <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
+        </div>
+        <div class="slideButton">
+            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="~/Content/images/jp_16.png" /></label>
+            <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="~/Content/images/us_16.png" /></label>
+        </div>
+        <audio id="audioplayer" autoplay>
+            <source src="~/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <div id="title">"Another West": Solo trip to Poland, for the 1st time in Summer 2014</div>
     <div id="carpet">
-        <div class="dropDiv" style="background: rgba(33,66,00,1)"><span class="date"><a href="#po1" id="po_pop">Aug 31</a></span></div>
-        <div class="dropDiv" style="background: rgba(66,99,00,0.95)"><span class="date"><a href="#po2" id="po_pop">Sept 1</a></span></div>
-        <div class="dropDiv" style="background: rgba(99,99,66,0.95)"><span class="date"><a href="#po3" id="po_pop">Sept 2</a></span></div>
-        <div class="dropDiv" style="background: rgba(255,204,33,0.95)"><span class="date"><a href="#po4" id="po_pop">Sept 3</a></span></div>
-        <div class="dropDiv" style="background: rgba(99,66,33,0.95)"><span class="date"><a href="#po5" id="po_pop">Sept 4</a></span></div>
-        <div class="dropDiv" style="background: rgba(99,66,66,0.95)"><span class="date"><a href="#po6" id="po_pop">Sept 5</a></span></div>
-        <div class="dropDiv" style="background: rgba(204,66,66,0.95)"><span class="date"><a href="#po7" id="po_pop">Sept 6</a></span></div>
+        @foreach (var item in Model)
+        {
+            <div class="dropDiv" style="background: @item.Color">
+                <span class="date">
+                    <a href="" id="dateClick@(item.ID)">@item.Date</a>
+                </span>
+            </div>
+        }
         <div id="holder"><a href="javascript:void(0);" id="main"></a></div>
 
-        <div id="footer">Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Piano learner: Kickno the webmaster</div>
+        <div id="footer">
+            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
+            Kickno the webmaster
+            <br />
+            <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+                '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+            </a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+            &nbsp; This webpage template is free to use. Will be available at Github soon.
+        </div>
     </div>
     <video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
+        <source src="~/Content/audio/background_chopin.webm" type="video/webm" />
         <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
+        <source src="~/Content/audio/background_chopin.ogv" type="video/ogg" />
+        <source src="~/Content/audio/background_chopin.3gp" type="video/3gp" />
     </video>
-    <!--1st day-->
-    <a href="#x" class="overlay" id="po1"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/1.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--2nd day-->
-    <a href="#x" class="overlay" id="po2"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/2.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--3rd day-->
-    <a href="#x" class="overlay" id="po3"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/3.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--4th day-->
-    <a href="#x" class="overlay" id="po4"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/4.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--5th day-->
-    <a href="#x" class="overlay" id="po5"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/5.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--6th day-->
-    <a href="#x" class="overlay" id="po6"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/6.html")))
-    </div>
-    <a class="close" href="#close"></a>
-    <!--7th day-->
-    <a href="#x" class="overlay" id="po7"></a>
-    <div class="popup">
-        @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/7.html")))
-    </div>
-    <a class="close" href="#close"></a>
+
+    @foreach (var item in Model)
+    {
+        <a href="#x" class="overlay" id="po@(item.ID)"></a>
+        <div class="popup">
+            <div class="popupInner">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + ".html")))
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+        <a href="#x" class="overlay" id="po@(item.ID)j"></a>
+        <div class="popup">
+            <div class="popupInner">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + "j.html")))
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+    }
 </body>
 </html>

@@ -1,8 +1,10 @@
 ﻿@model sandbox.Models.TopSite
-<ul>
-    <li>URL: @Model.URL</li>
-    <li>Cache-Control : @Model.CacheControl</li>
-    <li>Accessed Date is @Model.Date and Contents Expires @Model.Expires</li>
-    <li>Etag: @Model.Etag</li>
-    <li>Vary: @Model.Vary</li>
-</ul>
+           <p>URL: @Model.URL</p>
+<details>
+    <ul>
+        <li>Cache-Control : @Model.CacheControl</li>
+        <li>Accessed Date is @Model.Date and Contents Expires @Model.Expires</li>
+        <li>Etag: @Model.Etag</li>
+        <li>Vary: @Model.Vary</li>
+    </ul>
+</details>
