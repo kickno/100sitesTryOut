@@ -810,7 +810,6 @@ C:\Users\saki\Desktop\100siteTryOutnow\sandbox\bin\ko\System.Spatial.resources.d
 C:\Users\saki\Desktop\100siteTryOutnow\sandbox\bin\ru\System.Spatial.resources.dll
 C:\Users\saki\Desktop\100siteTryOutnow\sandbox\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\saki\Desktop\100siteTryOutnow\sandbox\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\saki\Desktop\100siteTryOutnow\sandbox\obj\Debug\sandbox.csprojResolveAssemblyReference.cache
 C:\Users\saki\Desktop\100siteTryOutnow\sandbox\obj\Debug\sandbox.dll
 C:\Users\saki\Desktop\100siteTryOutnow\sandbox\obj\Debug\sandbox.pdb
 G:\100siteTryOutnow\sandbox\bin\sandbox.dll

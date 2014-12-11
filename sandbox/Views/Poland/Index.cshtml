@@ -7,9 +7,9 @@
 <html itemscope itemtype="http://schema.org/Review">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
-    <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
-    <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    @* <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
+        <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+        <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />*@
     <link href="/Content/Poland.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/ico" href="/Content/Poland/favicon.ico">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
@@ -58,8 +58,6 @@
                         j = j - (adjustOrientation + 1);
                         dh = dh - (dh * 1.15);
                     }
-
-
                 }
                 setTimeout(function () {
                     $(el).css({
@@ -212,7 +210,7 @@
             });
         });
     </script>
-    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 </head>
 <body>
@@ -221,8 +219,8 @@
             <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
         </div>
         <div class="slideButton">
-            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="~/Content/images/jp_16.png" /></label>
-            <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="~/Content/images/us_16.png" /></label>
+            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="/Content/images/poland/jp16.jpg" alt="JP" /></label>
+            <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="/Content/images/poland/us16.jpg" alt="EN" /></label>
         </div>
         <audio id="audioplayer" autoplay>
             <source src="/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
@@ -243,14 +241,38 @@
 
         <div id="footer">
             Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
-            Kickno the webmaster
+            <script async type="text/javascript" language="javascript">
+<!--
+// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+// This code is freeware provided these four comment lines remain intact
+// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+{ coded = "hzMXcK8XmS@9kKXR.HSk"
+  key = "DazBNwGhbo0LIgc58pdrPKAleYJxTSiCj9HF13mUvVyRu2qWtfX7MZE6sOk4nQ"
+  shift=coded.length
+  link=""
+  for (i=0; i<coded.length; i++) {
+    if (key.indexOf(coded.charAt(i))==-1) {
+      ltr = coded.charAt(i)
+      link += (ltr)
+    }
+    else {
+      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+      link += (key.charAt(ltr))
+    }
+  }
+document.write("<a href='mailto:"+link+"'>Kickno</a>")
+}
+//-->
+            </script><noscript>Sorry, you need Javascript on to email me.</noscript>
+            the webmaster
             <br />
             <a href="https://plus.google.com/share?url=http://riot.jp/poland" onclick="javascript:window.open(this.href,
                 '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                 <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
             </a>
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
-            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+            <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
             &nbsp; This webpage template is free to use. Will be available at Github soon.
         </div>
     </div>
@@ -279,4 +301,4 @@
         </div>
     }
 </body>
-</html>
+</html>l>
