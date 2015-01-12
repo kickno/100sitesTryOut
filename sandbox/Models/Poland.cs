@@ -7,10 +7,10 @@ namespace sandbox.Models
 {
     public class Poland
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
         public string Color { get; set; }
         public string Date { get; set; }
-
         public string Content { get; set; }
      
     }

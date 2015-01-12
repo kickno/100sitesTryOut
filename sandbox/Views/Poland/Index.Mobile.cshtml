@@ -17,10 +17,11 @@
 <html itemscope itemtype="http://schema.org/Review">
 <head>
     <meta name="viewport" content="width=device-width" />
-    @*  <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
+     <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
         <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
         <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
-    *@
+
+    <meta property="og:image" content="http://riot.jp/Content/images/poland/marmaid.jpg" />
     <link href="/Content/Poland_Mobile.css" rel="stylesheet" />
 
     <link rel="shortcut icon" type="image/ico" href="/Content/Poland/favicon.ico">
@@ -35,22 +36,23 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
 
         $(function () {
 
-            $('a[id^="dateClick"]').click(function () {
-                var num = $(this).attr("id");
-                var lastChar = num[num.length - 1];
-                var checked = $('#lang-on').prop("checked");
-                if (checked) {
-                    $(this).attr("href", "#po" + lastChar + "j");
-                }
-                else {
-                    $(this).attr("href", "#po" + lastChar);
-                }
+            var language = window.navigator.userLanguage || window.navigator.language;
+            if (language.indexOf("ja") > -1) {
+                $('#lang-on').prop("checked", "checked");
+            }
+            else {
+                $('#lang-off').prop("checked", "checked");
+            }
 
-            });
+            $('form#ajaxForm').find('[id^=lang-]').click(
+                function () {
+                    $('form#ajaxForm').submit();
+                }).show();
         });
     </script>
     <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
@@ -59,9 +61,27 @@
 <body>
     <div id="header">
         <div class="slideButton">
-            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="/Content/images/poland/jp16.jpg" alt="JP" /></label>
-            <input type="radio" id="lang-off" value="en" name="lang" checked/><label for="lang-off"><img src="/Content/images/poland/us16.jpg" alt="EN" /></label>
-        </div>
+           @using (Ajax.BeginForm("Index", "Poland", null,
+            new AjaxOptions
+            {
+                HttpMethod = "post",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "diaryList"
+            }, new { id = "ajaxForm" }))
+           {
+            @Html.RadioButton("lang", "ja", new { id = "lang-on" })
+            <label for="lang-on">
+                <img src="/Content/images/poland/jp16.jpg" alt="JP" />
+            </label>
+            @Html.RadioButton("lang", "en", new { id = "lang-off" })
+            <label for="lang-off">
+                <img src="/Content/images/poland/us16.jpg" alt="EN" />
+            </label>
+            <noscript>
+                <input type="submit" value="Change" />
+            </noscript>
+
+           }   </div>
     </div>
 
     <div id="title">"Another West": Solo trip to Poland, for the 1st time in Summer 2014</div>
@@ -70,14 +90,12 @@
         {
             <div class="dropDiv" style="background: @item.Color">
                 <span class="date">
-                    <a href="" id="dateClick@(item.ID)">@item.Date</a>
+                    <a href="#po@(item.ID)" id="dateClick@(item.ID)">@item.Date</a>
                 </span>
             </div>
         }
         <p id="footer">
-            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place;
-            <br />
-            Piano learner:
+            Written by 
             <script async type="text/javascript" language="javascript">
             <!--
             // Email obfuscator script 2.1 by Tim Williams, University of Arizona
@@ -109,27 +127,11 @@
             </a>
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
             <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-            &nbsp; This webpage template is free to use. Will be available at Github soon.
+            &nbsp; This webpage source code is free to use and available at <a href="https://github.com/kickno/PolandTravelReport.git" alt="github">Github</a>.
         </p>
 
     </div>
-    @foreach (var item in Model)
-    {
-        <a href="#x" class="overlay" id="po@(item.ID)"></a>
-        <div class="popup">
-            <div class="popupInner">
-                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/m_" + @item.ID + ".html")))
-                <a class="close" href="#close"></a>
-            </div>
-        </div>
-        <a href="#x" class="overlay" id="po@(item.ID)j"></a>
-        <div class="popup">
-            <div class="popupInner">
-                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/m_" + @item.ID + "j.html")))
-                <a class="close" href="#close"></a>
-            </div>
-        </div>
-    }
+    @Html.Partial("_Diary", Model)
 </body>
 </html>
 

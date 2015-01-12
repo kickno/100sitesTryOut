@@ -7,9 +7,10 @@
 <html itemscope itemtype="http://schema.org/Review">
 <head>
     <meta name="viewport" content="width=device-width" />
-    @* <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
-        <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
-        <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />*@
+    <meta property="og:title" content="Another West -- Poland from Japanese eyes, living in U.S." />
+    <meta property="og:description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
+    <meta property="og:image" content="http://riot.jp/Content/images/poland/marmaid.jpg" />
+    <meta name="description" content="A Japanese Chopin fan, traveled alone to Warsaw for the first time" />
     <link href="/Content/Poland.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/ico" href="/Content/Poland/favicon.ico">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
@@ -22,7 +23,8 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-    <script type="text/javascript">
+    @Scripts.Render("~/bundles/jqueryval")
+    <script async type="text/javascript">
 
         $(function () {
 
@@ -89,6 +91,7 @@
                     }
                 }
             ); //audio slider end
+            /*
             $.fn.slideButton = function (options) {
                 // Settings
                 var settings = $.extend({
@@ -195,19 +198,32 @@
             };
             $('.slideButton').slideButton();
             /////http://jsfiddle.net/RDkBL/7/
+            */
+            var language = window.navigator.userLanguage || window.navigator.language;
+            if (language.indexOf("ja") > -1) {
+                $('#lang-on').prop("checked", "checked");
+            }
+            else {
+                $('#lang-off').prop("checked", "checked");
+            }
 
-            $('a[id^="dateClick"]').click(function () {
-                var num = $(this).attr("id");
-                var lastChar = num[num.length - 1];
-                var checked = $('#lang-on').prop("checked");
-                if (checked) {
-                    $(this).attr("href", "#po" + lastChar + "j");
-                }
-                else {
-                    $(this).attr("href", "#po" + lastChar);
-                }
+            $('form#ajaxForm').find('[id^=lang-]').click(
+                function () {
+                $('form#ajaxForm').submit();
+            }).show();
 
-            });
+            //$('a[id^="dateClick"]').click(function () {
+            //    var num = $(this).attr("id");
+            //    var lastChar = num[num.length - 1];
+            //    var checked = $('#lang-on').prop("checked");
+            //    if (checked) {
+            //        $(this).attr("href", "#po" + lastChar + "j");
+            //    }
+            //    else {
+            //        $(this).attr("href", "#po" + lastChar);
+            //    }
+
+            //});
         });
     </script>
     <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
@@ -219,8 +235,30 @@
             <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
         </div>
         <div class="slideButton">
-            <input type="radio" id="lang-on" value="jp" name="lang" /><label for="lang-on"><img src="/Content/images/poland/jp16.jpg" alt="JP" /></label>
-            <input type="radio" id="lang-off" value="en" name="lang" /><label for="lang-off"><img src="/Content/images/poland/us16.jpg" alt="EN" /></label>
+            @using (Ajax.BeginForm("Index", "Poland", null,
+            new AjaxOptions
+            {
+                HttpMethod = "post",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "diaryList"
+            }, new { id = "ajaxForm" }))
+            {
+                @*@Html.RadioButton("lang", "ja", new { id = "lang-on", onclick = "this.form.submit();" })*@
+                @Html.RadioButton("lang", "ja", new { id = "lang-on" })
+                <label for="lang-on">
+                    <img src="/Content/images/poland/jp16.jpg" alt="JP" />
+                </label>
+                @Html.RadioButton("lang", "en", new { id = "lang-off" })
+                <label for="lang-off">
+                    <img src="/Content/images/poland/us16.jpg" alt="EN" />
+                </label>
+                @*<a href="#" class="submit-link" style="display:none;">Change</a>*@
+                <noscript>
+                    <input type="submit" value="Change" />
+                </noscript>
+
+            }
+
         </div>
         <audio id="audioplayer" autoplay>
             <source src="/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
@@ -233,37 +271,37 @@
         {
             <div class="dropDiv" style="background: @item.Color">
                 <span class="date">
-                    <a href="" id="dateClick@(item.ID)">@item.Date</a>
+                    <a href="#po@(item.ID)" id="dateClick@(item.ID)">@item.Date</a>
                 </span>
             </div>
         }
         <div id="holder"><a href="javascript:void(0);" id="main"></a></div>
 
         <div id="footer">
-            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image/Video taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
+            Music: Mazurka #67-4 and #33-2 by Fryderyk Chopin; Image taken Żelazowa Wola, Chopin's birth place; <br />Piano learner:
             <script async type="text/javascript" language="javascript">
-<!--
-// Email obfuscator script 2.1 by Tim Williams, University of Arizona
-// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
-// This code is freeware provided these four comment lines remain intact
-// A wizard to generate this code is at http://www.jottings.com/obfuscator/
-{ coded = "hzMXcK8XmS@9kKXR.HSk"
-  key = "DazBNwGhbo0LIgc58pdrPKAleYJxTSiCj9HF13mUvVyRu2qWtfX7MZE6sOk4nQ"
-  shift=coded.length
-  link=""
-  for (i=0; i<coded.length; i++) {
-    if (key.indexOf(coded.charAt(i))==-1) {
-      ltr = coded.charAt(i)
-      link += (ltr)
-    }
-    else {
-      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
-      link += (key.charAt(ltr))
-    }
-  }
-document.write("<a href='mailto:"+link+"'>Kickno</a>")
-}
-//-->
+                <!--
+                // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+                // Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+                // This code is freeware provided these four comment lines remain intact
+                // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+                { coded = "hzMXcK8XmS@9kKXR.HSk"
+                  key = "DazBNwGhbo0LIgc58pdrPKAleYJxTSiCj9HF13mUvVyRu2qWtfX7MZE6sOk4nQ"
+                  shift=coded.length
+                  link=""
+                  for (i=0; i<coded.length; i++) {
+                    if (key.indexOf(coded.charAt(i))==-1) {
+                      ltr = coded.charAt(i)
+                      link += (ltr)
+                    }
+                    else {
+                      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+                      link += (key.charAt(ltr))
+                    }
+                  }
+                document.write("<a href='mailto:"+link+"'>Kickno</a>")
+                }
+                //-->
             </script><noscript>Sorry, you need Javascript on to email me.</noscript>
             the webmaster
             <br />
@@ -273,32 +311,20 @@ document.write("<a href='mailto:"+link+"'>Kickno</a>")
             </a>
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://riot.jp/poland" data-via="kickno" data-hashtags="WarsawSightSeeing">Tweet</a>
             <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-            &nbsp; This webpage template is free to use. Will be available at Github soon.
+            &nbsp; This webpage source code is free to use and available at <a href="https://github.com/kickno/PolandTravelReport.git" alt="github">Github</a>.
         </div>
     </div>
-    @*<video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
-            <source src="~/Content/audio/background_chopin.webm" type="video/webm" />
-            <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
-            <source src="~/Content/audio/background_chopin.ogv" type="video/ogg" />
-            <source src="~/Content/audio/background_chopin.3gp" type="video/3gp" />
-        </video>*@
 
-    @foreach (var item in Model)
-    {
-        <a href="#x" class="overlay" id="po@(item.ID)"></a>
-        <div class="popup">
-            <div class="popupInner">
-                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + ".html")))
-                <a class="close" href="#close"></a>
-            </div>
-        </div>
-        <a href="#x" class="overlay" id="po@(item.ID)j"></a>
-        <div class="popup">
-            <div class="popupInner">
-                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/Poland/" + @item.ID + "j.html")))
-                <a class="close" href="#close"></a>
-            </div>
-        </div>
-    }
+
+    @Html.Partial("_Diary", Model)
 </body>
-</html>l>
+</html>
+@*<video autoplay poster="~/Content/images/chopin.jpg" id="bgvid">
+        <source src="~/Content/audio/background_chopin.webm" type="video/webm" />
+        <source src="~/Content/audio/background_chopin.mp4" type="video/mp4" />
+        <source src="~/Content/audio/background_chopin.ogv" type="video/ogg" />
+        <source src="~/Content/audio/background_chopin.3gp" type="video/3gp" />
+    </video>*@
+@*<input type="radio" id="lang-on" value="jp" name="lang" runat="server" /><label for="lang-on"><img src="/Content/images/poland/jp16.jpg" alt="JP" /></label>
+        <input type="radio" id="lang-off" value="en" name="lang" runat="server" /><label for="lang-off"><img src="/Content/images/poland/us16.jpg" alt="EN" /></label>
+    <a href="#" class="submit-link" style="display: none;">Change</a>*@
