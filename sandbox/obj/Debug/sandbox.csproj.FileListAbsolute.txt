@@ -896,4 +896,3 @@ G:\100siteTryOutnow\sandbox\obj\Debug\sandbox.dll
 G:\100siteTryOutnow\sandbox\obj\Debug\sandbox.pdb
 w\sandbox\obj\Debug\sandbox.dll
 G:\100siteTryOutnow\sandbox\obj\Debug\sandbox.csprojResolveAssemblyReference.cache
-C:\Users\saki\Desktop\100siteTryOutnow\sandbox\obj\Debug\sandbox.csprojResolveAssemblyReference.cache
