@@ -58,42 +58,49 @@ namespace sandbox.Controllers
                         {
                             ID = "1",
                             Date = "Aug 31",
+                            Title = "Łazienki Concert",
                             Color = "rgba(33,66,00,0.95)"
                         },
                     new Poland
                         {
                             ID = "2",
                             Date = "Sept 1",
+                            Title="Old Town",
                             Color = "rgba(66,99,00,0.95)"
                         },
                     new Poland
                         {
                             ID = "3",
                             Date = "Sept 2",
+                            Title = "Chopin Museum",
                             Color = "rgba(99,99,66,0.95)"
                         },
                     new Poland
                         {
                             ID = "4",
                             Date = "Sept 3",
+                            Title = "Żelazowa Wola",
                             Color = "rgba(255,204,33,0.95)"
                         },
                     new Poland
                         {
                             ID = "5",
                             Date = "Sept 4",
+                            Title = "Krakow",
                             Color = "rgba(99,66,33,0.95)"
                         },
                     new Poland
                         {
                             ID = "6",
                             Date = "Sept 5",
+                            Title= "Citadelle",
                             Color = "rgba(99,66,66,0.95)"
                         },
                     new Poland
                         {
                             ID = "7",
                             Date = "Sept 6",
+                            Title = "Old Town Concert",
                             Color = "rgba(204,66,66,0.95)"
                         }
                 };

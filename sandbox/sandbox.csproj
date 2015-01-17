@@ -506,7 +506,6 @@
     <Content Include="Views\Poland\Index.Mobile.cshtml" />
     <Content Include="Views\Poland\_Diary.cshtml" />
     <Content Include="Views\Poland\_Diary.Mobile.cshtml" />
-    <Content Include="Views\Poland\_Diary - Copy %282%29.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
