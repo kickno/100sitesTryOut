@@ -49,39 +49,54 @@
                 $('#lang-off').prop("checked", "checked");
             }
 
+            $("#loadingDiv").hide();
             $('form#ajaxForm').find('[id^=lang-]').click(
                 function () {
                     $('form#ajaxForm').submit();
+                    $("#loadingDiv").show();
                 }).show();
         });
+        function onComplete() {
+            $("#loadingDiv").hide();
+        }
     </script>
+
     <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 </head>
 <body>
     <div id="header">
-        <div class="slideButton">
-           @using (Ajax.BeginForm("Index", "Poland", null,
+        <div id="buttonOuter">
+            <div id="loadingDiv">
+                <img alt="Loading" src="@Url.Content("~/Content/Images/ajax-loader_mobile.gif")" />
+            </div>
+            <div class="slideButton">
+
+                @using (Ajax.BeginForm("Index", "Poland", null,
             new AjaxOptions
             {
                 HttpMethod = "post",
                 InsertionMode = InsertionMode.Replace,
-                UpdateTargetId = "diaryList"
+                UpdateTargetId = "diaryList",
+                OnComplete = "return onComplete();"
             }, new { id = "ajaxForm" }))
-           {
-            @Html.RadioButton("lang", "ja", new { id = "lang-on" })
-            <label for="lang-on">
-                <img src="/Content/images/poland/jp16.jpg" alt="JP" />
-            </label>
-            @Html.RadioButton("lang", "en", new { id = "lang-off" })
-            <label for="lang-off">
-                <img src="/Content/images/poland/us16.jpg" alt="EN" />
-            </label>
-            <noscript>
-                <input type="submit" value="Change" />
-            </noscript>
+                {
+                    @Html.RadioButton("lang", "ja", new { id = "lang-on" })
+                    <label for="lang-on">
+                        <img src="/Content/images/poland/jp16.jpg" alt="JP" />
+                    </label>
+                    @Html.RadioButton("lang", "en", new { id = "lang-off" })
+                    <label for="lang-off">
+                        <img src="/Content/images/poland/us16.jpg" alt="EN" />
+                    </label>
+                    @*<a href="#" class="submit-link" style="display:none;">Change</a>*@
+                    <noscript>
+                        <input type="submit" value="Change" />
+                    </noscript>
+                }
 
-           }   </div>
+            </div>
+        </div>
     </div>
 
     <div id="title">"Another West": Solo trip to Poland, for the 1st time in Summer 2014</div>

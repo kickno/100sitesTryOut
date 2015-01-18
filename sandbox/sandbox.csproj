@@ -210,6 +210,8 @@
     <Content Include="Content\audio\background_chopin.3gp" />
     <Content Include="Content\audio\background_chopin.mp4" />
     <Content Include="Content\audio\tachikoma.mp3" />
+    <Content Include="Content\images\ajax-loader_gold.gif" />
+    <Content Include="Content\images\ajax-loader_mobile.gif" />
     <Content Include="Content\images\poland\1\nie.jpg" />
     <Content Include="Content\images\poland\1\s_bathroom.jpg" />
     <Content Include="Content\images\poland\1\s_nie.jpg" />
@@ -455,6 +457,7 @@
     <None Include="Properties\PublishProfiles\riot.jp.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\1s.JPG" />
+    <Content Include="Images\ajax-loader_gold.gif" />
     <Content Include="Images\meishiColor.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

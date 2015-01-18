@@ -91,114 +91,7 @@
                     }
                 }
             ); //audio slider end
-            /*
-            $.fn.slideButton = function (options) {
-                // Settings
-                var settings = $.extend({
-                    slideSpeed: 8,
-                    revertSpeed: 3,
-                    labelWidth: 30
-                }, options);
-
-                this.each(function () {
-                    var container = $(this);
-                    var label = container.children('label');
-                    var input = container.children(':radio');
-                    var maxWidth = 0;
-
-                    if (label.length != 2 || input.length != 2) {
-                        throw new Error("The container must contain two radio buttons and two labels");
-                    }
-
-                    // move() does the animation associated with
-                    // state changing for the button
-                    function move(direction, speed) {
-                        var amount = direction === 'right' ? halfWidth : -1;
-                        var duration = (direction === 'right' ? halfWidth - handle.position().left : handle.position().left) * speed;
-
-                        handle.animate({
-                            left: amount
-                        }, duration);
-
-                        input.eq(direction === 'right' ? 0 : 1).attr('checked', true);
-                    }
-
-                    // Handles changing by checking current state
-                    function updateState() {
-                        move(handle.hasClass('jp') ? 'right' : 'left', settings.slideSpeed);
-                        handle.toggleClass('jp');
-                        return false;
-                    }
-
-                    // Reverts position - think of this as
-                    // the opposite of updateState()
-                    function revert() {
-                        move(handle.hasClass('jp') ? 'left' : 'right', settings.revertSpeed);
-                        return false;
-                    }
-
-                    // Adding classes and hiding input elements
-                    container.addClass('ui-sbutton-container ui-corner-all');
-                    input.addClass('ui-helper-hidden-accessible');
-                    label.addClass('ui-sbutton-label');
-
-                    // Setting label widths - if none set,
-                    // then loop through all of them and use the biggest
-                    if (settings.labelWidth) {
-                        maxWidth = settings.labelWidth;
-                    } else {
-                        label.each(function () {
-                            var w = $(this).outerWidth();
-                            if (w > maxWidth) {
-                                maxWidth = w;
-                            }
-                        });
-                    }
-
-                    // Padding was useful for finding largest width,
-                    // but will now interfere when setting explicit widths
-                    label.width(maxWidth).css({
-                        'padding-left': 0,
-                        'padding-right': 0
-                    });
-
-                    // Getting all important half width for later use
-                    var halfWidth = (container.outerWidth() / 2);
-
-                    // Very messy chain that does element creation,
-                    // insertion and event handling all at once
-                    var handle = $('<a />')
-                    .addClass('ui-sbutton-handle  ui-corner-all').hover(function () {
-                        $(this).toggleClass('ui-sbutton-active');
-                    }).dblclick(function () {
-                        updateState();
-                        return false;
-                    }).appendTo(container).width(maxWidth - 1).draggable({
-                        containment: 'parent',
-                        axis: 'x',
-                        stop: function (event, ui) {
-                            var left = $(this).position().left;
-                            if ((left > (halfWidth - 1) / 2 && handle.hasClass('jp')) || (left < (halfWidth / 2 - 1) && !handle.hasClass('jp'))) {
-                                updateState();
-                            } else {
-                                revert();
-                            }
-                        }
-                    });
-
-                    // Set up initial state of the button
-                    if (input.first().is(':checked')) {
-                        move('right', 0);
-                    } else {
-                        handle.addClass('jp');
-                    }
-                });
-
-                return this;
-            };
-            $('.slideButton').slideButton();
-            /////http://jsfiddle.net/RDkBL/7/
-            */
+       
             var language = window.navigator.userLanguage || window.navigator.language;
             if (language.indexOf("ja") > -1) {
                 $('#lang-on').prop("checked", "checked");
@@ -206,10 +99,11 @@
             else {
                 $('#lang-off').prop("checked", "checked");
             }
-
+            $("#loadingDiv").hide();
             $('form#ajaxForm').find('[id^=lang-]').click(
                 function () {
-                $('form#ajaxForm').submit();
+                    $('form#ajaxForm').submit();
+                    $("#loadingDiv").show();                
             }).show();
 
             //$('a[id^="dateClick"]').click(function () {
@@ -223,8 +117,12 @@
             //        $(this).attr("href", "#po" + lastChar);
             //    }
 
-            //});
+            //});         
+
         });
+        function onComplete() {
+            $("#loadingDiv").hide();
+        }
     </script>
     <script async>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
@@ -234,31 +132,37 @@
         <div class="volume">
             <img id="volume" src="~/Content/images/volume.jpg" /><div id="audioSlider"></div>
         </div>
-        <div class="slideButton">
-            @using (Ajax.BeginForm("Index", "Poland", null,
+        <div id="buttonOuter">
+            <div id="loadingDiv">
+                <img alt="Loading" src="@Url.Content("~/Content/Images/ajax-loader_gold.gif")" />
+            </div>
+            <div class="slideButton">
+
+                @using (Ajax.BeginForm("Index", "Poland", null,
             new AjaxOptions
             {
                 HttpMethod = "post",
                 InsertionMode = InsertionMode.Replace,
-                UpdateTargetId = "diaryList"
+                UpdateTargetId = "diaryList",
+                OnComplete = "return onComplete();"
             }, new { id = "ajaxForm" }))
-            {
-                @*@Html.RadioButton("lang", "ja", new { id = "lang-on", onclick = "this.form.submit();" })*@
-                @Html.RadioButton("lang", "ja", new { id = "lang-on" })
-                <label for="lang-on">
-                    <img src="/Content/images/poland/jp16.jpg" alt="JP" />
-                </label>
-                @Html.RadioButton("lang", "en", new { id = "lang-off" })
-                <label for="lang-off">
-                    <img src="/Content/images/poland/us16.jpg" alt="EN" />
-                </label>
-                @*<a href="#" class="submit-link" style="display:none;">Change</a>*@
-                <noscript>
-                    <input type="submit" value="Change" />
-                </noscript>
+                {
+                    @*@Html.RadioButton("lang", "ja", new { id = "lang-on", onclick = "this.form.submit();" })*@
+                    @Html.RadioButton("lang", "ja", new { id = "lang-on" })
+                    <label for="lang-on">
+                        <img src="/Content/images/poland/jp16.jpg" alt="JP" />
+                    </label>
+                    @Html.RadioButton("lang", "en", new { id = "lang-off" })
+                    <label for="lang-off">
+                        <img src="/Content/images/poland/us16.jpg" alt="EN" />
+                    </label>
+                    @*<a href="#" class="submit-link" style="display:none;">Change</a>*@
+                    <noscript>
+                        <input type="submit" value="Change" />
+                    </noscript>
+                }
 
-            }
-
+            </div>
         </div>
         <audio id="audioplayer" autoplay>
             <source src="/Content/audio/20130512_67-4&33-2_2.mp3" type="audio/mpeg" />
